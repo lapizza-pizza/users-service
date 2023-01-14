@@ -12,6 +12,16 @@ yarn build - собрать приложение
 yarn test - запустить тесты
 ```
 
+## Команды для миграций данных в БД
+
+
+```bash
+yarn db:create database/migrations/migration-name - создание пустой миграции
+yarn db:generate database/migrations/migration-name - сгенерировать миграцию
+yarn db:migrate database/migrations/migration-name - выполнить миграции
+yarn db:revert - откатить последнюю миграцию
+```
+
 
 ## Соглашение коммитов
 
