@@ -1,5 +1,6 @@
-import { ApplicationEntity } from 'src/common/entities/application.entity';
+import { ApplicationEntity } from '@src/common/entities/application.entity';
 import { Column, Entity } from 'typeorm';
+
 
 @Entity({ name: 'users' })
 export class UserEntity extends ApplicationEntity {

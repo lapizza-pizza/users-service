@@ -3,7 +3,7 @@ import { CreateDateColumn, DeleteDateColumn, PrimaryColumn, UpdateDateColumn } f
 import { UUID } from '../types/uuid.brand';
 
 export class ApplicationEntity {
-	@PrimaryColumn()
+	@PrimaryColumn({ type: 'uuid' })
 	id: UUID
 
 	@CreateDateColumn()
