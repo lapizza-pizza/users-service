@@ -4,6 +4,7 @@ import { IsDefined, IsOptional, IsString, IsUUID } from 'class-validator';
 
 export class CreateUserContract extends ApplicationContract {
 	@IsUUID()
+	@IsDefined()
 	id: UUID;
 
 	@IsString()
@@ -13,8 +14,4 @@ export class CreateUserContract extends ApplicationContract {
 	@IsString()
 	@IsOptional()
 	lastName?: string;
-
-	@IsString()
-	@IsDefined()
-	birthday: Date;
 }

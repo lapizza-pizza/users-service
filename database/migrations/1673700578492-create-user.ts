@@ -12,7 +12,6 @@ export class CreateUser1673700578492 implements MigrationInterface {
             "deletedAt" TIMESTAMP, 
             "firstName" character varying NOT NULL, 
             "lastName" character varying NOT NULL, 
-            "birthday" TIMESTAMP NOT NULL, 
             CONSTRAINT "PK_users__id" PRIMARY KEY ("id"))`);
     }
 

@@ -9,7 +9,4 @@ export class UserEntity extends ApplicationEntity {
 
 	@Column()
 	lastName: string;
-
-	@Column()
-	birthday: Date;
 }
