@@ -31,10 +31,10 @@ export class CreateUserContract extends ApplicationContract {
 	@IsOptional()
 	@Expose()
 	@ApiProperty({
-		required: false,
+		required: true,
 		type: String,
 		description: 'фамилия пользователя',
 		example: 'Иванов'
 	})
-	lastName?: string;
+	lastName: string;
 }
