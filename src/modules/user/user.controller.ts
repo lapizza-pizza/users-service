@@ -10,17 +10,21 @@ import { UserEntity } from './domain/user.entity';
 @Controller('user')
 @ApiTags('user')
 export class UserController {
-	constructor(private readonly commandBus: CommandBus, private readonly em: EntityManager) { }
+	constructor(
+		private readonly commandBus: CommandBus,
+		private readonly em: EntityManager
+	) { }
 
 	@Post()
 	@ApiBody({ type: CreateUserContract })
-	@ApiResponse({ status: 200, type: UserEntity })
+	@ApiResponse({ status: 201, type: UserEntity })
 	async create(@Body() contract: CreateUserContract) {
 		return this.commandBus.execute(new CreateUserCommand(contract))
 	}
 
 	@Get()
-	async find() {
+	@ApiResponse({ status: 200, type: [UserEntity] })
+	async find(): Promise<UserEntity[]> {
 		return this.em.find(UserEntity)
 	}
 }
